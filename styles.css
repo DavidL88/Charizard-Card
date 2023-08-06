@@ -1,0 +1,388 @@
+body {
+    background: rgb(206, 71, 18);
+}
+
+::selection  {
+    background: none;
+}
+
+.charizard {
+    block-size: 100vh;
+    inline-size: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.perspective {
+    perspective: 62.5rem;
+}
+
+.card_background {
+    block-size: 12.5rem;
+    inline-size: 9.375rem;
+    background-color: #ffe659;
+    border-radius: 5%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.card_background::before {
+    content: '';
+    block-size: 11.875rem;
+    inline-size: 8.75rem;
+    background-image: url(./images/fondo.jpg);
+    background-size: cover;
+    border-radius: 5%;
+    position: absolute;
+    z-index: 1;
+    margin-inline-start: calc((150px - 140px)/2);
+    box-sizing: border-box;
+}
+
+.card_background::after {
+    content: '';
+    position: absolute;
+    block-size: 21.875rem;
+    inline-size: 3.125rem;
+    background-image: linear-gradient(black,red);
+    margin-left: calc((150px - 50px)/2);
+    animation: rotate 2s linear infinite;
+    visibility: hidden;
+    box-sizing: border-box;
+}
+
+.perspective:hover .card_background::after {
+    visibility: visible;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.phase-2 {
+    position: absolute;
+    background-image: url(./images/Charmeleon.png);
+    background-size: cover;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    z-index: 3;
+    inset-block-end: 10.9375rem;
+    margin-inline-start: 13px;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.phase-2:hover {
+    background-image: url(./images/charmeleon.gif);
+    border: 1px solid darkred;
+    box-sizing: border-box;
+}
+
+.name {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 10.5rem;
+    margin-inline-start: 2.25rem;
+}
+
+.name h2 {
+    font-size: .75rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.level {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 10.6875rem;
+    margin-inline-start: 5.4375rem;
+}
+
+.level h6 {
+    font-size: .25rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.power {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 10rem;
+    margin-inline-start: 6.25rem;
+}
+
+.power h6 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: .5rem;
+}
+
+.fire {
+    position: absolute;
+    background-image: url(./images/fire.png);
+    background-size: cover;
+    height: .625rem;
+    width: .625rem;
+    border-radius: 50%;
+    z-index: 3;
+    inset-block-end: 11.125rem;
+    margin-inline-start: 8.125rem;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.438);
+    box-sizing: border-box;
+}
+
+.fire:hover {
+    background-image: url(./images/fire.gif);
+}
+
+.charizard-img {
+    inline-size: 7.86rem;
+    block-size: 6.125rem;
+    background-image: url(./images/CHARIZARD.gif);
+    background-size: cover;
+    z-index: 2;
+    position: absolute;
+    margin-inline-start: calc((150px - 125px)/2);
+    inset-block-start: 1.5625rem;
+    border: .25rem solid #ffe659;
+    box-sizing: border-box;
+
+}
+
+.charizard-img:hover {
+    background-image: url(./images/anicharizard.gif);
+}
+
+.card_background:hover {
+    transform: rotateY(20deg);
+    transition: 0.5s;
+}
+
+.secondbackground {
+    block-size: 11.875rem;
+    inline-size: 8.75rem;
+    background-image: url(./images/fondo_animado.gif);
+    background-size: cover;
+    border-radius: 5%;
+    position: absolute;
+    z-index: 1;
+    margin-inline-start: calc((150px - 140px)/2);
+    visibility: hidden;
+}
+
+.perspective:hover .secondbackground {
+    visibility: visible;
+}
+
+.description {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 4.0625rem;
+    margin-inline-start: .85rem;
+    background-image: linear-gradient(rgb(255, 196, 0),rgb(255, 223, 118));
+    block-size: .5rem;
+    inline-size: 7.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.description h3 {
+    font-size: 4.5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.skill {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 3.0625rem;
+    margin-inline-start: .7rem;
+    font-size: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: darkblue;
+}
+
+.skill-detail {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 2.3rem;
+    margin-inline-start: .7rem;
+    font-size: 4.5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.firebolt-1 {
+    position: absolute;
+    background-image: url(./images/fire.png);
+    background-size: cover;
+    inline-size: .5rem;
+    block-size: .5rem;
+    z-index: 3;
+    inset-block-end: 2rem;
+    margin-inline-start: 0.7rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.438);
+}
+.firebolt-2 {
+    position: absolute;
+    background-image: url(./images/fire.png);
+    background-size: cover;
+    inline-size: .5rem;
+    block-size: .5rem;
+    z-index: 3;
+    inset-block-end: 2rem;
+    margin-inline-start: 1.2625rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.438);
+}
+.firebolt-3 {
+    position: absolute;
+    background-image: url(./images/fire.png);
+    background-size: cover;
+    inline-size: .5rem;
+    block-size: .5rem;
+    z-index: 3;
+    inset-block-end: 2rem;
+    margin-inline-start: 1.825rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.438);
+}
+.firebolt-4 {
+    position: absolute;
+    background-image: url(./images/fire.png);
+    background-size: cover;
+    inline-size: .5rem;
+    block-size: .5rem;
+    z-index: 3;
+    inset-block-end: 2rem;
+    margin-inline-start: 2.3875rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.438);
+}
+
+.firebolt-1:hover,
+.firebolt-2:hover,
+.firebolt-3:hover,
+.firebolt-4:hover {
+    background-image: url(./images/fire.gif);
+}
+
+.fireSpin {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 1.5rem;
+    margin-inline-start: 3.4375rem;
+    font-size: 6px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.mana {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 1.5rem;
+    margin-inline-start: 7.3rem;
+    font-size: 6px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.fireSpindesc {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: 1.375rem;
+    margin-inline-start: 0.7rem;
+    font-size: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+.line {
+    block-size: 1px;
+    inline-size: 2.5rem;
+    background-color: gray;
+    z-index: 3;
+    position: absolute;
+    margin-block-start: 9.6875rem;
+    margin-inline-start: .7rem;
+    box-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.438);
+}
+
+.weakness {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: .5625rem;
+    inset-inline-start: .7rem;
+    font-size: .25rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: #ffe659;
+    border-radius: 10px;
+    block-size: .5rem;
+    inline-size: 2.1875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weakness:hover {
+    background-color: aquamarine;
+    color: darkblue;
+}
+
+.resistance {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: .5625rem;
+    inset-inline-start: 3.6rem;
+    font-size: .25rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: #ffe659;
+    border-radius: 10px;
+    block-size: .5rem;
+    inline-size: 2.1875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resistance:hover {
+    background-color: darkred;
+    color: white;
+}
+
+.retreatcost {
+    position: absolute;
+    z-index: 3;
+    inset-block-end: .5625rem;
+    inset-inline-start: 6.5rem;
+    font-size: .25rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: #ffe659;
+    border-radius: 10px;
+    block-size: .5rem;
+    inline-size: 2.1875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retreatcost:hover {
+    background-color: darkgray;
+    color: yellow;
+}
